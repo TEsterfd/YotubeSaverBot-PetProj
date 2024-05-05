@@ -15,7 +15,8 @@ def video_send(message):
         bot.send_video(message.chat.id, video)
         video.close()
         os.remove(fpath)
-    except:
+    except Exception as e:
+        print(e)
         bot.send_message(message.chat.id, 'Не удалось скачать видео')
 
 
